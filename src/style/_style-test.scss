@@ -1,0 +1,38 @@
+
+@mixin circle( $size ) {
+  display: inline-block;
+  background-color: red;
+  @include size( $size );
+  border-radius: $size / 2;
+  margin-right: ($spacer * .25) !important;
+  line-height: $size;
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+div.styletest {
+  @include make-container();
+  @include make-container-max-widths();
+  text-align: center;
+
+  div {
+    @extend .circle;
+    &.root {
+      @extend .circle-big;
+    }
+    &.half {
+      @extend .circle-small;
+    }
+  }
+  
+}
+
+.circle {
+  @include circle( 23px );
+}
+.circle-big {
+  @include circle( 25px );
+}
+.circle-small {
+  @include circle( 10px );
+}

@@ -1,0 +1,37 @@
+$square-sizes: (
+  xs: 80px,
+  sm: 100px,
+  md: 120px,
+  lg: 150px,
+  xl: 200px
+);
+
+.square {
+  display: inline-block;
+  background-color: red;
+  margin-right: ($spacer * .25) !important;
+  text-align: center;
+}
+@mixin square( $size ) {
+  .square {
+    @include size( $size );
+    line-height: $size;
+  }
+}
+
+@each $breakpoint, $size in $square-sizes {
+  @include media-breakpoint-up($breakpoint) {
+    @include square( $size );
+  }
+}
+
+div.styletest {
+  @include make-container();
+  @include make-container-max-widths();
+  text-align: center;
+
+  div {
+    @extend .square;
+  }
+  
+}
