@@ -1,7 +1,7 @@
 const m = require('mithril')
 
 function mainLayout() {
-  return function(){ return [ m('div.container', [ m( 'Hello' ) ] ) ] };
+  return function(){ return [ m('div.container', [ m( 'div', 'Hello' ) ] ) ] };
 }
 
 function mainLayoutView() {

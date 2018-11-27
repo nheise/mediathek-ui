@@ -1,19 +1,11 @@
 var webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-//var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
 var jsSources = helpers.root( 'src','js');
 var styleSources = helpers.root( 'src','style');
 var nodeModules = helpers.root( 'node_modules');
-
-/*
-const extractSass = new ExtractTextPlugin({
-  filename: "[name].[contenthash].css",
-  disable: process.env.NODE_ENV === "development"
-});
-*/
 
 module.exports = {
 
