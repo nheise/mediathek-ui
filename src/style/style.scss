@@ -35,6 +35,8 @@
 @import "~bootstrap/scss/mixins/buttons";
 @import "~bootstrap/scss/mixins/border-radius";
 
+@import "~bootstrap/scss/mixins/list-group";
+
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
@@ -48,6 +50,9 @@
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
 
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/list-group";
+
 @import "~bootstrap/scss/utilities/background";
 @import "~bootstrap/scss/utilities/spacing";
 
@@ -60,3 +65,20 @@
 
 @import "style-test";
 //@import "bs-breakpoints-test";
+
+nav {
+    ol {
+        @extend .breadcrumb;
+        li {
+            @extend .breadcrumb-item;
+        }
+    }
+}
+
+div.directory {
+    @extend .list-group;
+    a {
+        @extend .list-group-item;
+        @extend .list-group-item-action;
+    }
+}
