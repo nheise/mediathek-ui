@@ -27,7 +27,15 @@ const file = {
   view: vnode => m('a[href=#]', vnode.attrs.name )
 }
 
-m.route.prefix('/mediathek')
+m.request({
+  method: 'GET',
+  url: 'http://localhost:3000/mediathek-api/directories//',
+})
+.then(function(result) {
+  console.log(result)
+})
+
+//m.route.prefix('/mediathek/#!')
 m.route( document.body, '/', {
   "/": mainLayoutView( ),
 });
